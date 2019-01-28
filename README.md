@@ -2,21 +2,11 @@
 1. clone this repository
 2. `cd` into created directory
 3. run `docker-compose build`
-4. create directories that will be mounted into the container:
-  ~~~
-  mkdir -p tmp/bundle
-  mkdir database
-  ~~~
-5. create a new rails app in the directory with:
+4. create a new rails app in the directory with:
   ~~~
   docker-compose run --no-deps app rails new . -d postgresql -B
   ~~~
-6. Edit `config/environments/development.rb` and change the file watcher:
-  ~~~ ruby
-  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.file_watcher = ActiveSupport::FileUpdateChecker
-  ~~~
-7. Edit `config/database.yml` and set up the host and username:
+5. Edit `config/database.yml` and set up the host and username:
   ~~~ yml
   ...
   default: &default
@@ -29,6 +19,6 @@
     username: postgres
   ...
   ~~~
-8. Start the app with `docker-compose up`
-9. Generate the databases with 'docker-compose exec app bundle exec rails db:create'
-10. Nagivate to http://localhost on your browser. You should see the rails welcome page.
+6. Generate the databases with 'docker-compose exec app bundle exec rails db:create'
+7. Start the app with `docker-compose up`
+8. Nagivate to http://localhost on your browser. You should see the rails welcome page.

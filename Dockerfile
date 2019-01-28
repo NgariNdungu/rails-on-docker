@@ -7,6 +7,7 @@ RUN apt-get update \
 RUN adduser deploy --gecos '' --disabled-password
 USER deploy
 RUN gem install rails --version '~> 5.2' --no-document
+RUN mkdir /home/deploy/app
 WORKDIR /home/deploy/app
 EXPOSE 3000
 CMD ["/bin/bash", "entrypoint.sh"]
