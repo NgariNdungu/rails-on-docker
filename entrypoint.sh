@@ -2,6 +2,8 @@
 # clear pid before starting server
 rm -f tmp/pids/server.pid
 # check if Gemfile has changed and bundle
-bundle check || bundle install
+if [[ -e "Gemfile" ]]; then
+  bundle check || bundle install
+fi
 # execute commands
 exec "$@"
