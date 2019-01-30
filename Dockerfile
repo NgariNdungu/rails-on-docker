@@ -9,6 +9,7 @@ USER deploy
 RUN gem install rails --version '~> 5.2' --no-document
 RUN mkdir /home/deploy/app
 WORKDIR /home/deploy/app
+COPY --chown=deploy . ./
 EXPOSE 3000
 ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
