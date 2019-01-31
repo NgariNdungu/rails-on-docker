@@ -20,7 +20,11 @@
     username: postgres
   ...
   ~~~
-6. Generate the databases with  `docker-compose run app bundle exec rails db:create`
+6. Generate the databases with  `docker-compose run app rails db:create`
+7. Edit `config/puma.rb` and append this line to the end of the file:
+  ~~~
+  pidfile /tmp/pids/server.pid
+  ~~~
 7. Start the app with `docker-compose up`
 8. Nagivate to http://localhost on your browser. You should see the rails welcome page.
 
