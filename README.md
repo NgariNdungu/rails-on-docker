@@ -29,6 +29,8 @@
 8. Nagivate to http://localhost on your browser. You should see the rails welcome page.
 
 ## Existing App
-1. Copy the `Dockerfile`, `docker-compose.yml` and `entrypoint.sh` files into the root of your app.
+1. Copy the `Dockerfile` and `docker-compose.yml` files into the root of your app.
 2. Build the image with `docker-compose build`
 3. Follow from step 5 above
+
+> Remember to re-build your image if you want a self-contained, ready to deploy image for your app.
